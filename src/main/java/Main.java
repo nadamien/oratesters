@@ -45,23 +45,23 @@ public class Main {
             ResultSet resultSet = statement.executeQuery(sqlQuery);
 
             LOG.info("Running SQL query: [{}]", sqlQuery1);
-            ResultSet resultSet = statement.executeQuery(sqlQuery1);
+            ResultSet resultSet1 = statement.executeQuery(sqlQuery1);
 
             LOG.info("Running SQL query: [{}]", sqlQuery2);
-            ResultSet resultSet = statement.executeQuery(sqlQuery2);
+            ResultSet resultSet2 = statement.executeQuery(sqlQuery2);
 
             LOG.info("Running SQL query: [{}]", sqlQuery3);
-            ResultSet resultSet = statement.executeQuery(sqlQuery3);
+            ResultSet resultSet3 = statement.executeQuery(sqlQuery3);
 
             LOG.info("Running SQL query: [{}]", sqlQuery4);
-            ResultSet resultSet = statement.executeQuery(sqlQuery4);
+            ResultSet resultSet4 = statement.executeQuery(sqlQuery4);
 
             while (resultSet.next()) {
                 LOG.info("Result of SQL query: [{}]", resultSet.getString(1));
-                LOG.info("Result of SQL query: [{}]", resultSet.getString(2));
-                LOG.info("Result of SQL query: [{}]", resultSet.getString(3));
-                LOG.info("Result of SQL query: [{}]", resultSet.getString(4));
-                LOG.info("Result of SQL query: [{}]", resultSet.getString(5));
+                LOG.info("Result of SQL query: [{}]", resultSet1.getString(1));
+                LOG.info("Result of SQL query: [{}]", resultSet2.getString(1));
+                LOG.info("Result of SQL query: [{}]", resultSet3.getString(1));
+                LOG.info("Result of SQL query: [{}]", resultSet4.getString(1));
             }
 
             statement.close();
