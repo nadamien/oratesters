@@ -32,12 +32,28 @@ public class Main {
         try {
             LOG.info("****** Starting JDBC Connection test *******");
             String sqlQuery = "select sysdate from dual";
+            String sqlQuery1 = "select count(*) from Authors";
+            String sqlQuery2 = "select count(*) from Books";
+            String sqlQuery3 = "select count(*) from Memebers";
+            String sqlQuery4 = "select count(*) from Loans";
 
             Connection conn = DriverManager.getConnection(args[2], properties);
             conn.setAutoCommit(false);
             Statement statement = conn.createStatement();
             LOG.info("Running SQL query: [{}]", sqlQuery);
             ResultSet resultSet = statement.executeQuery(sqlQuery);
+
+            LOG.info("Running SQL query: [{}]", sqlQuery1);
+            ResultSet resultSet = statement.executeQuery(sqlQuery1);
+
+            LOG.info("Running SQL query: [{}]", sqlQuery2);
+            ResultSet resultSet = statement.executeQuery(sqlQuery2);
+
+            LOG.info("Running SQL query: [{}]", sqlQuery3);
+            ResultSet resultSet = statement.executeQuery(sqlQuery3);
+
+            LOG.info("Running SQL query: [{}]", sqlQuery4);
+            ResultSet resultSet = statement.executeQuery(sqlQuery4);
 
             while (resultSet.next()) {
                 LOG.info("Result of SQL query: [{}]", resultSet.getString(1));
