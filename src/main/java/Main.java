@@ -40,6 +40,7 @@ public class Main {
             Connection conn = DriverManager.getConnection(args[2], properties);
             conn.setAutoCommit(false);
             Statement statement = conn.createStatement();
+
             LOG.info("Running SQL query: [{}]", sqlQuery);
             ResultSet resultSet = statement.executeQuery(sqlQuery);
 
@@ -57,6 +58,10 @@ public class Main {
 
             while (resultSet.next()) {
                 LOG.info("Result of SQL query: [{}]", resultSet.getString(1));
+                LOG.info("Result of SQL query: [{}]", resultSet.getString(2));
+                LOG.info("Result of SQL query: [{}]", resultSet.getString(3));
+                LOG.info("Result of SQL query: [{}]", resultSet.getString(4));
+                LOG.info("Result of SQL query: [{}]", resultSet.getString(5));
             }
 
             statement.close();
